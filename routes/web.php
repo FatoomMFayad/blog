@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('posts', ['posts'=> Post::all()]);
 });
 
-Route::get('posts/{post}', function ($slug){
+Route::get('posts/{post}', function ($id){
     //find a post by its slug and pass it to a view called "post"
-       view('post', ['post' => Post::find($slug)]);
-})->where('post','[A-z_\-]+');
+       view('post', ['post' => Post::find($id)]);
+});

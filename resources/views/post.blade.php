@@ -1,9 +1,13 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <title>My Blog</title>
-    <link href="{{ asset('/app.css') }}" rel="stylesheet">
-    <article>
-        <?= $post; ?>
-    </article>
+<x-layout>
+        <article>
+            <h1>
+              {{ $post->title }}
+            </h1>
+            <div>
+                {{ $post->excerpt }}
+            </div>
+        </article>
     <a href="/">Go Back</a>
-</html>
+</x-layout>
+
+

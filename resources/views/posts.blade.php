@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <title>My Blog</title>
-    <link href="{{ asset('/app.css') }}" rel="stylesheet">
-    <body>
-    <?php  foreach ($posts as $post):?>
-        <article class="body">
-            <?= $post; ?>
+<x-layout>
+    @foreach($posts as $post)
+        <article>
+            <h1>
+                <a href="/posts/{{ $post->id }}">
+                    {{ $post->title }}
+                </a>
+            </h1>
+            <div>
+                {{ $post->excerpt }}
+            </div>
         </article>
-    <?php endforeach; ?>
-    </body>
-
-</html>
+    @endforeach
+</x-layout>
